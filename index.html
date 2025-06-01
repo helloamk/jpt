@@ -123,7 +123,10 @@
     </header>
 
     <section id="home" class="hero">
-        <div class="hero-content container"> <!-- .container is important for width management -->
+        <!-- Canvas for particle animation -->
+        <canvas id="particle-canvas"></canvas>
+
+        <div class="hero-content container">
             <div class="hero-text-column">
                 <h2>Welcome To My Website</h2>
                 <h1>I'm Amrit Khanal</h1>
@@ -135,7 +138,7 @@
                     <a href="#blogs" class="btn secondary-btn">Read My Blogs</a>
                 </div>
             </div>
-            <div class="profile-image"> <!-- Container for the circular image -->
+            <div class="profile-image"> <!-- This container is key for its positioning -->
                 <img src="Images/amrit-profile.png" alt="Amrit Khanal - Chemical Engineer" class="profile-img">
             </div>
         </div>
@@ -1025,130 +1028,132 @@
                 <button class="toggle-btn" id="toggleBtn">Loading Blogs...</button>
             </div>
         </div>
+    </section>
+    <!-- End of My Blog Section -->
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title">Contact Me</h2>
-                <div class="contact-content">
-                    <div class="social-links">
-                        <h3>Connect With Me</h3>
-                        <div class="social-icons">
-                            <a href="https://www.facebook.com/amritk.com.np" class="social-icon" target="_blank"
-                                rel="noopener noreferrer" aria-label="Facebook">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="https://www.instagram.com/amritk.com.np/" class="social-icon" target="_blank"
-                                rel="noopener noreferrer" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://github.com/amritgithub970" class="social-icon" target="_blank"
-                                rel="noopener noreferrer" aria-label="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/amritk-com-np/" class="social-icon" target="_blank"
-                                rel="noopener noreferrer" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="contact-form">
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="Your Email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" placeholder="Your Message" rows="5"
-                                    required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-info">
-                        <h3>Amrit Khanal</h3>
-                        <p>Chemical Engineer | Educator | Content Creator</p>
-                        <p class="footer-message">Thank you for visiting my website. Feel free to connect with me
-                            on social media or contact me directly.</p>
-                        <div class="social-icons">
-                            <a href="https://www.facebook.com/amritk.com.np/" class="social-icon" target="_blank"
-                                rel="noopener noreferrer" aria-label="Facebook">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                            <a href="https://www.instagram.com/amritk.com.np/" class="social-icon" target="_blank"
-                                rel="noopener noreferrer" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://github.com/amritgithub970" class="social-icon" target="_blank"
-                                rel="noopener noreferrer" aria-label="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/amritk-com-np/" class="social-icon" target="_blank"
-                                rel="noopener noreferrer" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-
-                        </div>
-                    </div>
-                    <div class="footer-contact">
-                        <h3>Contact <a
-                                href="https://docs.google.com/spreadsheets/d/1Q7oVjL6MIcYUAJieA66j6PT5-b9MBbklW4QUfKK0Tgk/edit?usp=sharing"
-                                target="_blank">In</a>fo</h3>
-                        <p><i class="fas fa-envelope"></i> helloamritkhanal@gmail.com</p>
-                        <a href="mailto:helloamritkhanal@gmail.com" class="btn primary-btn contact-btn">
-                            <i class="fas fa-paper-plane"></i> Send Email
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-content">
+                <div class="social-links">
+                    <h3>Connect With Me</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/amritk.com.np" class="social-icon" target="_blank"
+                            rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/amritk.com.np/" class="social-icon" target="_blank"
+                            rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/amritgithub970" class="social-icon" target="_blank"
+                            rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/amritk-com-np/" class="social-icon" target="_blank"
+                            rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
                         </a>
                     </div>
                 </div>
-                <div class="footer-bottom">
-                    <p style="color: white;">© 2025 Amrit Khanal. All Rights Reserved<br>Design & Developed by:
-                        <strong>Amrit
-                            Khanal</strong><br>
-                        Last Updated: May 2025
-                    </p>
-                </div>
-            </div>
-            <div class="scroll-top">
-                <a href="#home"><i class="fas fa-arrow-up"></i></a>
-            </div>
-        </footer>
-
-        <!-- Modal for displaying full blog post  -->
-        <div id="blogModal" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 id="modalBlogTitle">Blog Post Title</h3>
-                    <span class="close-button">×</span>
-                </div>
-                <div class="modal-body">
-                    <iframe id="blogIframe" src="" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="modal-footer">
-                    <a id="viewOnBloggerLink" href="#" target="_blank" class="btn modal-btn">View on Blogger</a>
-                    <button class="btn modal-btn close-modal-footer-btn">Back to Portfolio</button>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
-        <!-- End of Modal -->
+    </section>
 
-        <script src="script.js"></script>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Amrit Khanal</h3>
+                    <p>Chemical Engineer | Educator | Content Creator</p>
+                    <p class="footer-message">Thank you for visiting my website. Feel free to connect with me
+                        on social media or contact me directly.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/amritk.com.np/" class="social-icon" target="_blank"
+                            rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/amritk.com.np/" class="social-icon" target="_blank"
+                            rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/amritgithub970" class="social-icon" target="_blank"
+                            rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/amritk-com-np/" class="social-icon" target="_blank"
+                            rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact <a
+                            href="https://docs.google.com/spreadsheets/d/1Q7oVjL6MIcYUAJieA66j6PT5-b9MBbklW4QUfKK0Tgk/edit?usp=sharing"
+                            target="_blank">In</a>fo</h3>
+                    <p><i class="fas fa-envelope"></i> helloamritkhanal@gmail.com</p>
+                    <a href="mailto:helloamritkhanal@gmail.com" class="btn primary-btn contact-btn">
+                        <i class="fas fa-paper-plane"></i> Send Email
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p style="color: white;">© 2025 Amrit Khanal. All Rights Reserved<br>Design & Developed by:
+                    <strong>Amrit
+                        Khanal</strong><br>
+                    Last Updated: May 2025
+                </p>
+            </div>
+        </div>
+        <div class="scroll-top">
+            <a href="#home"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <!-- Modal for displaying full blog post  -->
+    <div id="blogModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalBlogTitle">Blog Post Title</h3>
+                <span class="close-button">×</span>
+            </div>
+            <div class="modal-body">
+                <iframe id="blogIframe" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="modal-footer">
+                <a id="viewOnBloggerLink" href="#" target="_blank" class="btn modal-btn">View on Blogger</a>
+                <button class="btn modal-btn close-modal-footer-btn">Back to Portfolio</button>
+            </div>
+        </div>
+    </div>
+    <!-- End of Modal -->
+
+    <script src="script.js"></script>
 </body>
 
 </html>
